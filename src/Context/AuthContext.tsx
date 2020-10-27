@@ -18,7 +18,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
   return (
     <div>
-      {isLoaded ? 
+      {!isLoaded ? 
         <h1>Loading</h1> : 
         <AuthContext.Provider value={{user, setUser, isAuthenticated, setIsAuthenticated}}>
           {children}
