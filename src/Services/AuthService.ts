@@ -1,5 +1,6 @@
 export default {
   login: (user: any) => {
+    console.log("ASD")
     return fetch("/user/login", {
       method: "POST",
       body: JSON.stringify(user),
@@ -7,8 +8,13 @@ export default {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => res.json())
-      .then((data) => data);
+      .then((res) => {
+        if (res.status !== 401) {
+          return res.json().then((data) => data);
+        } else {
+          return { isAuthenticated: false, user: { username: "", role: "" } };
+        }
+      });
   },
 
   register: (user: any) => {
