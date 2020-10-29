@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import NavBar from "./Components/NavBar";
 import Register from "./Components/Register";
+import Todos from "./Components/Todos";
 import { AuthContext } from "./Context/AuthContext";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/todos" component={Todos} />
     </BrowserRouter>
   );
 }

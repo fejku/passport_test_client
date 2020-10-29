@@ -49,13 +49,34 @@ const Register: React.FC<Props> = ({ history }) => {
       <form onSubmit={onSubmit}>
         <h3>Please register</h3>
         <label htmlFor="username" className="sr-only">Username: </label>
-        <input type="text" name="username" onChange={onChange} className="form-control" placeholder="Enter username" />
+        <input 
+          type="text" 
+          name="username" 
+          value={user.username}
+          onChange={onChange} 
+          className="form-control" 
+          placeholder="Enter username" 
+        />
 
         <label htmlFor="password" className="sr-only">Password: </label>
-        <input type="text" name="password" onChange={onChange} className="form-control" placeholder="Enter password" />
+        <input 
+          type="text" 
+          name="password" 
+          value={user.password} 
+          onChange={onChange} 
+          className="form-control" 
+          placeholder="Enter password" 
+        />
         
         <label htmlFor="role" className="sr-only">Role: </label>
-        <input type="text" name="role" onChange={onChange} className="form-control" placeholder="Enter role" />
+        <input 
+          type="text" 
+          name="role" 
+          value={user.role}
+          onChange={onChange} 
+          className="form-control" 
+          placeholder="Enter role"
+        />
 
         <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
         {message && <Message message={message}/>}
